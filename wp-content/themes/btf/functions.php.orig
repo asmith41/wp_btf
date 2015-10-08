@@ -1,0 +1,182 @@
+<?php
+/**
+ * Twenty Fifteen functions and definitions
+ *
+ * Set up the theme and provides some helper functions, which are used in the
+ * theme as custom template tags. Others are attached to action and filter
+ * hooks in WordPress to change core functionality.
+ *
+ * When using a child theme you can override certain functions (those wrapped
+ * in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before
+ * the parent theme's file, so the child theme functions would be used.
+ *
+ * @link https://codex.wordpress.org/Theme_Development
+ * @link https://codex.wordpress.org/Child_Themes
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are
+ * instead attached to a filter or action hook.
+ *
+ * For more information on hooks, actions, and filters,
+ * {@link https://codex.wordpress.org/Plugin_API}
+ *
+ * @package WordPress
+ * @subpackage Twenty_Fifteen
+ * @since Twenty Fifteen 1.0
+ */
+
+// creating a theme options 
+add_action("admin_menu","create_theme_option");
+
+function create_theme_option(){
+	$page_title = 'Adding items';
+    $menu_title = 'customization';
+    $capability = 'edit_posts';
+    $menu_slug = 'my-theming';
+    $function = 'my_display';
+    $icon_url = '';
+    $position = 99;
+
+    add_menu_page($page_title,$menu_title,$capability,$menu_slug,$function,$icon_url,$position);
+}
+
+// registering nav menu
+	register_nav_menus( array(
+		'navbar' => 'top navbar',
+	));
+
+// custom post type for slilder 
+	add_action("init","register_slider");
+	function register_slider() {
+    		$labels = array( 
+  		'name'               => __( 'Myslider' ),
+		'singular_name'      => __( 'single post type name', 'text_domain' ),
+		'add_new'            => __( 'add new post' ),
+		'add_new_item'       => __( 'Add new slider' ),
+		'edit_item'          => __( 'Edit' ),
+		'new_item'           => __( 'New single post' ),
+		// 'view_item'          => __( 'View single post type name', 'text_domain' ),
+		// 'search_items'       => __( 'Search plural post type name', 'text_domain' ),
+		// 'not_found'          => __( 'No plural post type name found', 'text_domain' ),
+		// 'not_found_in_trash' => __( 'No plural post type name found in Trash', 'text_domain' ),
+		// 'parent_item_colon'  => __( 'Parent single post type name:', 'text_domain' ),
+		// 'menu_name'          => __( 'plural post type name found', 'text_domain' ),
+    		);
+ 
+    		$args = array( 
+		'labels'              => $labels,
+<<<<<<< HEAD
+		'hierarchical'        => true,
+		'description'         => 'description',
+		'taxonomies'          => array( 'category' ),
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'menu_position'       => 5,
+		//'menu_icon'         => '',
+		'show_in_nav_menus'   => true,
+		'publicly_queryable'  => true,
+		'exclude_from_search' => false,
+		'has_archive'         => true,
+		'query_var'           => true,
+		'can_export'          => true,
+		'rewrite'             => true,
+		'capability_type'     => 'post', 
+		'supports'            => array( 
+									'thumbnail', 
+									'custom-fields', 'trackbacks', 'comments', 
+									'revisions', 'page-attributes', 'post-formats'
+								),
+    );
+ 
+    register_post_type( 'slider', $args );
+}
+
+=======
+		'menu_icon'           => 'dashicons-format-image',
+
+		'hierarchical'        => true,
+		'description'         => 'description',
+		'taxonomies'          => array( 'category' ),
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'menu_position'       => 5,
+		//'menu_icon'         => '',
+		'show_in_nav_menus'   => true,
+		'publicly_queryable'  => true,
+		'exclude_from_search' => false,
+		'has_archive'         => true,
+		'query_var'           => true,
+		'can_export'          => true,
+		'rewrite'             => true,
+		'capability_type'     => 'post', 
+		'supports'            => array( 
+									'thumbnail', 
+									'custom-fields', 'trackbacks', 'comments', 
+									'revisions', 'page-attributes', 'post-formats','title'
+								),
+    );
+ 
+    register_post_type( 'slider', $args );
+}
+>>>>>>> b5b948bf03e7278233ec234907e59f12a38be90c
+
+
+// adding meta box for home page slider
+	// meta box for image
+	add_action("add_meta_boxes","add_meta_image");
+	function add_meta_image(){
+		add_meta_box("home_image","Images for the slider","display_meta_image","slider","normal","default");
+	}
+	//call back function
+	function display_meta_image(){
+	?>
+		<input type="file"/>
+	<?php	
+	}
+	//save the images
+	add_action("save_post","save_meta_image");
+	function save_meta_image(){
+
+	}
+
+<<<<<<< HEAD
+=======
+// adding meta box for home page slider
+>>>>>>> b5b948bf03e7278233ec234907e59f12a38be90c
+	// meta box for text in slider
+	add_action("add_meta_boxes","add_meta_slider");
+	function add_meta_slider(){
+		//--> add_meta_box( $id, $title, $callback, $page, $context, $priority, $callback_args ); 
+		add_meta_box( "home_slider", "Text for slider", "display_meta_home" ,"slider", "normal", "default"); 
+	}
+	//callback function
+	function display_meta_home($post){
+
+		$values=get_post_custom($post->ID);
+		$text = isset( $values['slider_text'] ) ? esc_attr( $values['slider_text'][0] ) : "" ;
+	?>
+		<h4>Choose images for the slider</h4>
+		<input type="file" id="image_slider" name="image_slider"/><br>
+		<!-- call to function for wp_upload_bits-->
+		<h4>Enter the text caption for the image</h4><br>
+		<textarea class="large-text" name="slider_text"><?php echo $text; ?></textarea>
+		<?php
+	}
+	//save meta value
+	add_action('save_post','save_meta_slider');
+	function save_meta_slider($post_id){
+<<<<<<< HEAD
+		$chk = isset( $_POST['slider_text'] )  ? $_POST['slider_text'] : "" ;
+    	  	update_post_meta( $post_id, 'slider_text', $chk );
+=======
+		$chk_image= is_null( $_POST['image'] ) ?  "" : $_POST['image'];  
+		$chk_text = isset( $_POST['slider_text'] )  ? $_POST['slider_text'] : "" ;
+    	  	update_post_meta( $post_id, 'slider_text', $chk_text );
+		 	$upload = wp_upload_bits($_FILES['image_slider']['name'], null, file_get_contents($_FILES['image_slider']['tmp_name']));
+    	  	update_post_meta( $post_id, 'image_slider' , $upload);
+>>>>>>> b5b948bf03e7278233ec234907e59f12a38be90c
+	}
+
+

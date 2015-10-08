@@ -1,0 +1,63 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*Web Fonts*/
+@font-face {
+    font-family: 'proxima_nova_alt_rgbold';
+    src: url('../fonts/proxima_nova_alt_bold-webfont.eot');
+    src: url('../fonts/proxima_nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima_nova_alt_bold-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_alt_bold-webfont.woff') format('woff'),
+         url('../fonts/proxima_nova_alt_bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('../fonts/proxima_nova_regular-webfont.eot');
+    src: url('../fonts/proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima_nova_regular-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_regular-webfont.woff') format('woff'),
+         url('../fonts/proxima_nova_regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*Home Page*/
+a, p, li{font-family: 'proxima_nova_rgregular';}
+h1,h2,h3{font-family: 'proxima_nova_alt_rgbold';}
+/*----------Header----------*/
+header {height: 95px; padding: 29px 0;}
+nav.navbar.navbar-default {border: none; background: none; box-shadow: none; float: right;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {color: #000000; background-color: transparent; background-image: none; box-shadow: none;}
+.navbar-default .navbar-nav>li>a{color: #585858;}
+.nav>li>a {padding: 10px 0 10px 72px;}
+.navbar {min-height: 0; margin-bottom: 0; border: none;}
+.navbar-header h1 {margin: 0;}
+div#bs-example-navbar-collapse-1 {padding-right: 0;}
+/*Top Bar*/
+.topBar {background: #383838; height: 32px; position: relative;}
+.topBarLinks {float: right;}
+.topBarLinks a {color: #FFF; text-decoration: none; font-size: 14px; display: inline-block;}
+a.clientLogin {background: #50b1f7; padding: 8px 23px 4px; margin: 0 21px;}
+a.phoneNum {background-image: url(../img/phone.png); background-repeat: no-repeat; background-position: 4px 4px; padding-left: 27px; font-size: 16px;}
+a.bookConsult {background-image: url(../img/arrowUp.png); background-repeat: no-repeat; background-color: #f75850; padding: 8px 10px; -webkit-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.35); -moz-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.35); box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.35); background-position: 8px 10px; padding-left: 25px; position: absolute; right: 8%; top: 0;}
+a.bookConsult span {float: left; width: 100%;}
+/*Slider*/
+.flex-control-nav, .flex-direction-nav{display: none;}
+.flexslider{border: none;}
+.sliderCaption {position: absolute; z-index: 1; color: #FFF; display: inline-block; top: 30%; left: 36%; text-align: center;}
+.sliderCaption h2 {font-size: 48px; font-family: 'proxima_nova_rgregular'; text-shadow: -1px 2px 2px rgba(150, 150, 150, 0.58); line-height: 1.2; margin-bottom: 45px;}
+.sliderCaption h2 span{font-family: 'proxima_nova_alt_rgbold';}
+.sliderCaption a {background: #f75850; padding: 13px; border-radius: 10px; font-size: 16px; color: #ffffff;}
+figure.introImg{overflow:hidden; border:1px solid #e1e1e1; display:inline-block; padding: 14px; -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.7);
+-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.7);
+box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.7);}
+figure.introImg, figure.introImg img{border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;}
+
+
+
+
+

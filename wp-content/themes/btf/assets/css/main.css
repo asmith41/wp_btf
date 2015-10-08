@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+/*Web Fonts*/
+
+@font-face {
+    font-family: 'proxima_nova_alt_rgbold';
+    src: url('../fonts/proxima_nova_alt_bold-webfont.eot');
+    src: url('../fonts/proxima_nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima_nova_alt_bold-webfont.woff2') format('woff2'), url('../fonts/proxima_nova_alt_bold-webfont.woff') format('woff'), url('../fonts/proxima_nova_alt_bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('../fonts/proxima_nova_regular-webfont.eot');
+    src: url('../fonts/proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima_nova_regular-webfont.woff2') format('woff2'), url('../fonts/proxima_nova_regular-webfont.woff') format('woff'), url('../fonts/proxima_nova_regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*Home Page*/
+
+a,
+p,
+li {
+    font-family: 'proxima_nova_rgregular';
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'proxima_nova_alt_rgbold';
+}
+
+
+/*----------Header----------*/
+
+header {
+    height: 100px;
+    padding: 35px 0;
+}
+
+nav.navbar.navbar-default {
+    border: none;
+    background: none;
+    box-shadow: none;
+    float: right;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #000000;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #585858;
+}
+
+.nav>li>a {
+    padding: 10px 0 10px 72px;
+}
+
+.navbar {
+    min-height: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.navbar-header h1 {
+    margin: 0;
+}
+
+div#bs-example-navbar-collapse-1 {
+    padding-right: 0;
+    width:100%;
+}
+
+
+/*Top Bar*/
+
+.topBar {
+    background: #383838;
+    height: 32px;
+    position: relative;
+}
+
+.topBarLinks {
+    float: right;
+}
+
+.topBarLinks a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+}
+
+a.clientLogin {
+    background: #50b1f7;
+    padding: 8px 23px 4px;
+    margin: 0 21px;
+}
+
+a.phoneNum {
+    background-image: url(../img/phone.png);
+    background-repeat: no-repeat;
+    background-position: 4px 4px;
+    padding-left: 27px;
+    font-size: 16px;
+}
+
+.bookConsult {
+    background-image: url(../img/arrowUp.png);
+    background-repeat: no-repeat;
+    background-color: #f75850;
+    padding: 8px 10px;
+    -webkit-box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.35);
+    background-position: 8px 10px;
+    padding-left: 25px;
+    position: absolute;
+    right: 10.7%;
+    top: 0;
+}
+
+a.bookConsult span {
+    display: block;
+}
+
+
+/*Slider*/
+
+section.slider {
+    width:100%;
+    margin-bottom: 102px;
+    max-height: 580px;
+    overflow: hidden;
+}
+
+.flex-control-nav,
+.flex-direction-nav {
+    display: none;
+}
+
+
+
+.sliderCaption {
+    position: absolute;
+    z-index: 1;
+    color: #FFF;
+    display: inline-block;
+    top: 30%;
+    left: 36%;
+    text-align: center;
+}
+
+.sliderCaption h2 {
+    font-size: 48px;
+    font-family: 'proxima_nova_rgregular';
+    text-shadow: -1px 2px 2px rgba(150, 150, 150, 0.58);
+    line-height: 1.2;
+    margin-bottom: 45px;
+}
+
+.sliderCaption h2 span {
+    font-family: 'proxima_nova_alt_rgbold';
+}
+
+.btn.btn-primary {
+    background: #f75850;
+    padding: 13px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+}
+
+
+/*Introduction Section*/
+
+section.introduction {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 85px;
+}
+
+.introWrap {
+    margin-bottom: 70px;
+    float: left;
+    width: 100%;
+}
+
+figure.introImg {
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+    display: inline-block;
+    padding: 14px;
+    -webkit-box-shadow: 5px 5px 25px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow: 5px 5px 25px 0px rgba(50, 50, 50, 0.2);
+    box-shadow: 5px 5px 25px 0px rgba(50, 50, 50, 0.2);
+    margin-left: 30px;
+}
+
+figure.introImg,
+figure.introImg img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    width: 100%;
+}
+
+textWrap {
+    margin-top: 25px;
+}
+
+.textWrap h3,
+section.welcome h3 {
+    font-size: 30px;
+    font-family: 'proxima_nova_rgregular';
+    margin-bottom: 23px;
+}
+
+.textWrap p,
+section.welcome p {
+    font-size: 16px;
+    color: #666;
+    line-height: 30px;
+}
+
+.introTwo figure.introImg {
+    margin: 0;
+}
+
+.introWrap.second {
+    margin-bottom: 0;
+}
+
+
+/*Welcome Section*/
+
+section.welcome {
+    margin: 70px 0;
+    text-align: center;
+}
+
+.welcomeMsg {
+    margin-bottom: 27px;
+}
+
+.whatWeDo h3 {
+    border-top: 1px solid #e7e7e7;
+    padding: 45px 98px;
+    display: inline-block;
+}
+
+.workBlock i {
+    background: url(../img/sprite.png);
+    height: 75px;
+    width: 75px;
+    cursor: pointer;
+    margin-bottom: 14px;
+    display: inline-block;
+}
+
+.workBlock i.dollor {
+    background-position: 7px 2px;
+}
+
+.workBlock i.pig {
+    background-position: -59px 2px;
+}
+
+.workBlock i.chunk {
+    background-position: -127px 14px;
+}
+
+.workBlock i.graph {
+    background-position: -190px 2px;
+}
+
+.workBlock:hover i {
+    background-color: #50b1f7;
+    border-radius: 50%;
+}
+
+.workBlock:hover i.dollor {
+    background-position: 7px -48px;
+}
+
+.workBlock:hover i.pig {
+    background-position: -59px -48px;
+}
+
+.workBlock:hover i.chunk {
+    background-position: -128px -43px;
+}
+
+.workBlock:hover i.graph {
+    background-position: -190px -52px;
+}
+
+.workBlock h4 {
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+section.welcome .workBlock p {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+/*Enquiry Section*/
+
+section.enquiry {
+    background: #252525;
+    color: #FFF;
+    padding: 48px 0;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.enquiry p {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+.enquiry p a.btn.btn-primary {
+    margin-left: 35px;
+}
